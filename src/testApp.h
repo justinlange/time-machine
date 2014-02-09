@@ -22,11 +22,12 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         void exit();
         void drawPointCloud();
+        void drawSceneGeometry();
     
         ofxKinect kinect;
-    
-    
-    
+        ofMesh mesh;
+        bool loadKinect;
+
         bool bThreshWithOpenCV;
         bool bDrawPointCloud;
 	
@@ -34,8 +35,12 @@ class testApp : public ofBaseApp{
         int farThreshold;
 	
         int angle;
-	
-        // used for viewing the point cloud
+        ofxOculusRift		oculusRift;
+        ofLight				light;
         ofEasyCam easyCam;
-		
+    
+        float				lastUpdateTime;
+    
+        ofTrueTypeFont		fontWorld;
+	
 };
